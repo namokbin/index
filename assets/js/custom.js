@@ -168,13 +168,26 @@
 	/*  7. PORTFOLIO POPUP VIEW ( IMAGE LIGHTBOX )
 	/* ----------------------------------------------------------- */ 
 
-	$('.mu-filter-imglink').magnificPopup({
-	  type: 'image',
-	  mainClass: 'mfp-fade',
-	  gallery:{
-	    enabled:true
-	  }
-	});
+	// $('.mu-filter-imglink').magnificPopup({
+	//   type: 'image',
+	//   mainClass: 'mfp-fade',
+	//   gallery:{
+	//     enabled:true
+	//   }
+	// });
+
+		var nowIdx=0;
+		
+		$('.mu-filter-imglink').on("click",function(){
+			nowIdx = $('.mu-filter-imglink').index(this);
+
+			$(".mu-portfolio-content>ol>li").eq(nowIdx).fadeIn();
+		});
+
+		$('.mu-portfolio-content>ol>li>a:nth-child(1)').on("click",function(evt){
+			evt.preventDefault();
+			$(".mu-portfolio-content>ol>li").fadeOut();
+		});
 
 	/* ----------------------------------------------------------- */
 	/*  8. CLIENT TESTIMONIALS (SLICK SLIDER)
