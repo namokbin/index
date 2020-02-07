@@ -182,12 +182,20 @@
 			nowIdx = $('.mu-filter-imglink').index(this);
 
 			$(".mu-portfolio-content>ol>li").eq(nowIdx).fadeIn();
+//            $(document).on("click",function(){
+//                $(".mu-portfolio-content>ol>li").fadeOut();            
+//            });
 		});
 
 		$('.mu-portfolio-content>ol>li>a:nth-child(1)').on("click",function(evt){
 			evt.preventDefault();
 			$(".mu-portfolio-content>ol>li").fadeOut();
 		});
+    
+// 수정할부분    
+//        $(window).not(".mu-portfolio-content>ol>li").on("click",function(){
+//          $(".mu-portfolio-content>ol>li").fadeOut();  
+//        });
 
 	/* ----------------------------------------------------------- */
 	/*  8. CLIENT TESTIMONIALS (SLICK SLIDER)
